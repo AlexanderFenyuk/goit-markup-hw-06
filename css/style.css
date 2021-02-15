@@ -553,6 +553,7 @@ ul {
 .pbutton {
   margin-right: 8px;
   min-height: 38px;
+  cursor: pointer;
 }
 /* ПОРТФОЛИО Проэкты карточки выстраиваем в несколько строк */
 .projects-section {
