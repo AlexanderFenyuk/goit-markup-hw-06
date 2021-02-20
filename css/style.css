@@ -126,6 +126,7 @@ ul {
   line-height: 31px;
   color: #000000;
 }
+
 /* контейнер размер */
 .header {
   border-bottom: 1px solid var(--separatory-line);
