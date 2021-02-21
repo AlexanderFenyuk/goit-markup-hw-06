@@ -22,23 +22,48 @@
 
   /*общее использует logo; hover; focus; hero-bottom */
   --accent-color: #2196f3;
-
   --main-color-text: #212121;
   --second-color-text: #757575;
   --separatory-line: #ececec;
   --social-icon: #afb1b8;
   --icon-link-color: #afb1b8;
-  --logo-text-color: #fff;
   --close-color: rgba(0, 0, 0, 0.1);
 
   /*герой*/
   --hero-background-color: #c4c4c4;
   --hero-text-color: #fff;
+  --hero-button-text-color: #ffffff;
 
   /*модальное окно*/
   --backdrop-color: rgba(0, 0, 0, 0.5);
+  --portfolio-button-bgcolor-active: #2196f3;
+
+  /*форма модального окна*/
+  --text-lable: #757575;
+  --modal-form-input-border-color: rgba(33, 33, 33, 0.2);
+  --commits-placeholder: rgba(117, 117, 117, 0.5);
+  --input-icon-color: #212121;
+  --input-focus-icon-color: #2196f3;
+  --checkbox-border: #212121;
+  --modal--button-hover: #188ce8;
+
+  /*наша команда*/
+  --social-ico-acent: #fff;
+
+  /*подвал*/
+  --footer-bgcolor: #2f303a;
+  --logo-text-color: #fff;
+  --footer-text-color: #ffffff;
+  --footer-address-contact: rgba(255, 255, 255, 0.6);
+  --logo-text-color-10p: rgba(255, 255, 255, 0.1);
+  --subscribe-button-color: #2196f3;
+  --subscribe-button-text: #fff;
+  --button-shadow-box: rgba(0, 0, 0, 0.15);
+  --input-border: rgba(255, 255, 255, 0.3);
+  --footer-input-user-text: #fff;
 
   /*Карточка портфолио*/
+  --portfolio-button-text-active-color: #fff;
   --thumb-text-color: #fff;
   --thumb-background-color: rgba(33, 150, 243, 0.9);
 }
@@ -144,7 +169,7 @@ ul {
   background-color: #fff;
 }
 
-/*  мыло + телефон + ховер */
+/* ссылка на email в хедере*/
 .header-email-link {
   text-decoration: none;
   font-family: var(--maine-font);
@@ -155,7 +180,7 @@ ul {
   color: var(--second-color-text);
   margin-right: 30px;
 }
-
+/*ссылка на телефон в хедере*/
 .header-tel-link {
   text-decoration: none;
   font-family: var(--maine-font);
@@ -178,19 +203,22 @@ ul {
   font-size: 14px;
   line-height: 16px;
   color: var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* outline: none; */
 }
-/* Студия Наша Команда акцент ссылок иконки */
+/* Студия - Наша Команда акцент ссылок - иконки */
 .social-icon:hover,
 .social-icon:focus {
   background-color: var(--accent-color);
   border-radius: 50%;
-  color: #fff;
+  color: var(--social-ico-acent);
   /* outline: none; */
 }
+
 /* Подвал акцент ссылок */
 .connect-link:hover,
 .connect-link:focus {
+  border-radius: 50%;
   background-color: var(--accent-color);
   /* outline: none; */
 }
@@ -212,12 +240,6 @@ ul {
   margin-right: 10px;
   fill: currentColor;
   text-align: center;
-}
-
-.contact-link-telephon {
-  display: inline-flex;
-  align-items: center;
-  color: var(--contact-link);
 }
 
 /* hero */
@@ -274,7 +296,7 @@ ul {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  color: #ffffff;
+  color: var(--hero-button-text-color);
   letter-spacing: 0.06em;
   font-family: var(--maine-font);
   font-weight: 700;
@@ -319,7 +341,7 @@ ul {
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
-  color: #757575;
+  color: var(--second-color-text);
 
   margin-top: 10px;
   padding: 0px;
@@ -361,7 +383,7 @@ ul {
   position: relative;
   width: 370px;
   height: 294px;
-  background-color: #757575;
+  background-color: var(--second-color-text);
 }
 .whatwedo-label {
   position: absolute;
@@ -434,9 +456,10 @@ ul {
 .ourteam-card-text {
   font-family: var(--maine-font);
   font-style: normal;
-  font-weight: 400px;
+  font-weight: normal;
   font-size: 16px;
   line-height: 19px;
+  letter-spacing: 0.03em;
   color: var(--second-color-text);
   margin-top: 10px;
 }
@@ -464,6 +487,7 @@ ul {
 
   margin-right: 10px;
 }
+/*ссылка иконок карточки*/
 .social-icon {
   width: 44px;
   height: 44px;
@@ -555,6 +579,7 @@ ul {
   min-height: 38px;
   cursor: pointer;
 }
+
 /* ПОРТФОЛИО Проэкты карточки выстраиваем в несколько строк */
 .projects-section {
   display: flex;
@@ -731,7 +756,7 @@ ul {
 .portfolio-card-text {
   font-family: var(--maine-font);
   font-style: normal;
-  font-weight: 400px;
+  font-weight: normal;
   font-size: 16px;
   line-height: 30px;
   color: var(--second-color-text);
@@ -835,7 +860,7 @@ ul {
 }
 
 .footer-logo-studio {
-  color: #ffffff;
+  color: var(--footer-text-color);
 }
 .footer-address-list {
   list-style: none;
@@ -847,7 +872,7 @@ ul {
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--footer-text-color);
 }
 .footer-address-contact-link {
   font-family: var(--maine-font);
@@ -855,7 +880,7 @@ ul {
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--footer-text-color);
   opacity: 0.6;
 }
 .address {
@@ -899,18 +924,102 @@ ul {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background-color: var(--logo-text-color-10p);
+  color: var(--logo-text-color);
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/*иконка*/
 .connect-icon {
   width: 20px;
   height: 20px;
   fill: currentColor;
 }
+
+/*форма для подписания*/
+.subscribe {
+  width: 570px;
+  height: 86px;
+  padding-top: 12px;
+  margin-left: 93px;
+  /* margin: 72px 0 94px 93px; */
+}
+/*призыв*/
+.subscribe-text {
+  font-family: var(--maine-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.142;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--logo-text-color);
+
+  /*outline: 1px solid orange;*/
+}
+/*форма заполнения*/
+.subscribe-form {
+  display: flex;
+}
+/*кнопка отправить*/
+.subscribe-button {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 12px;
+  padding-left: 29px;
+  padding-right: 28px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--subscribe-button-color);
+  box-shadow: 0px 4px 4px var(--button-shadow-box);
+}
+.subscribe-button:focus {
+  outline: 2px solid black;
+}
+
+/*поле заполнения*/
+.footer-input {
+  width: 358px;
+  height: 50px;
+  margin-top: 20px;
+  padding-left: 16px;
+  font-family: var(--maine-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--footer-input-user-text);
+}
+/*надпись на кнопке*/
+.subscribe-button-text {
+  font-family: var(--maine-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.875;
+  /* identical to box height, or 187% */
+
+  letter-spacing: 0.06em;
+
+  color: var(--subscribe-button-text);
+}
+/*иконка кнопки "Подписаться"*/
+.subscribe-button-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  /* fill: #fff; */
+}
+
 /*===модальное окно===*/
 /*фон модального окна*/
 .backdrop {
@@ -919,13 +1028,12 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-
   opacity: 1;
   transform: scale(1);
   transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
-
   background-color: var(--backdrop-color);
 }
+
 /*скрытие фона*/
 .backdrop.is-hidden {
   opacity: 0;
@@ -934,7 +1042,8 @@ ul {
   transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 750ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/*модальное окно*/
+
+/* М О Д А Л Ь Н О Е   О К Н О */
 .modal-port {
   position: absolute;
   top: 50%;
@@ -988,6 +1097,262 @@ ul {
 .close-icon {
   width: 12px;
   height: 12px;
-
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /*outline: 1px solid red;*/
+}
+.round:hover > .close-icon {
+  fill: var(--accent-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*Оглавление формы модального окна*/
+.modal-head {
+  width: 448px;
+  height: 23px;
+  font-family: var(--maine-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  color: var(--reature-head-color);
+}
+/*форма поля ввода*/
+.modal-form {
+  width: 448px;
+  height: 342px;
+  margin-top: 12px;
+}
+.modal-form-input {
+  /* position: relative; */
+  width: 448px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--modal-form-input-border-color);
+  padding: 11px 11px 11px 42px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-input:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  padding-left: 42px;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-form {
+  position: absolute;
+  left: 15px;
+  top: 35px;
+  width: 18px;
+  height: 18px;
+  fill: var(--input-icon-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus ~ .icon-form {
+  fill: var(--input-focus-icon-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*поле коментариев*/
+.commits {
+  width: 448px;
+  height: 120px;
+  resize: none;
+  padding: 12px 16px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--modal-form-input-border-color);
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.commits:focus {
+  width: 448px;
+  height: 120px;
+  resize: none;
+  padding: 12px 16px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+  outline: none;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.commits::placeholder {
+  font-family: var(--maine-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.01em;
+
+  color: var(--commits-placeholder);
+}
+/*подписи полей ввода*/
+.text-lable {
+  font-family: var(--maine-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.166;
+
+  /*letter-spacing: 0.01em;*/
+
+  color: var(--text-lable);
+}
+.form-blok {
+  position: relative;
+  width: 448px;
+  height: 58px;
+  margin-top: 10px;
+}
+/*чекбокс*/
+.form-blok-commit {
+  width: 448px;
+  margin-top: 10px;
+}
+.contract {
+  position: relative;
+  width: 448px;
+  height: 24px;
+  margin: 20px auto 0;
+}
+.contract input[type="checkbox"] {
+  /*скрываем элемент*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.contract-checkbox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 15px;
+
+  background-color: #fff;
+  border: 2px solid var(--checkbox-border);
+  border-radius: 2px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contract input[type="checkbox"]:checked + .contract-checkbox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 15px;
+
+  background-image: url("../images/icon-check.svg");
+  background-size: contain;
+  background-origin: border-box;
+  background-color: var(--accent-color);
+  border: 2px solid transparent;
+  border-radius: 2px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.contract-text {
+  margin-left: 24px;
+
+  font-family: var(--maine-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+
+  letter-spacing: 0.03em;
+
+  color: var(--text-lable);
+}
+.contract-link {
+  font-family: var(--maine-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+
+  letter-spacing: 0.03em;
+  text-decoration: underline;
+}
+.contract-link:focus {
+  outline: 2px solid black;
+}
+/*кнопка модалки*/
+.modal-button {
+  display: flex;
+  align-items: center;
+
+  width: 200px;
+  height: 50px;
+  margin: 30px auto 0 auto;
+  padding: 0;
+
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--portfolio-button-bgcolor-active);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button:hover {
+  display: flex;
+  align-items: center;
+
+  width: 200px;
+  height: 50px;
+  margin: 30px auto 0 auto;
+  padding: 0;
+
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--modal--button-hover);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button-text {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--maine-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.875;
+  color: var(--portfolio-button-text-active-color);
 }
