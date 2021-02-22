@@ -122,6 +122,9 @@ ul {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  /* margin: 0 auto; */
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /* контейнер для логотипа */
@@ -889,6 +892,7 @@ ul {
 
 .contaсt-navigation {
   margin-right: 70px;
+  width: 231px;
 }
 .flex {
   display: flex;
